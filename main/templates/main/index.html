@@ -1,0 +1,63 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/exercises.css' %}">
+    <div class="exlist">
+        {% for i in ex_list %}
+            <div class="exsingle">
+
+                <button class="colla"><label id="exname">{{i.Name}}</label><label>Level: {{i.Level}}</label><label>Space: {{i.Space}}</label></button>
+                
+                <div class="cont">
+                    
+                    <div class="contblock">
+                        <label class="sidename">Rep Time :</label><label class="sidecont">{{i.Time}} second</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        <label class="sidename">Movement Type :</label><label class="sidecont">{{i.Motion}}</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        <label class="sidename">Exercise Type :</label><label class="sidecont">{{i.Type}}</label>
+                    </div>
+
+                    <div class="contblock">
+                        <label class="sidename">space :</label><label class="sidecont">{{i.Space}}</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        {% if i.Equipment %}
+                        <label class="sidename">Equipemnts :</label><label class="sidecont">{% for e in i.Equipment %} {{e}}, {% endfor %}</label>
+                        {% endif %}
+                    </div>
+
+                    <div class="contblock">
+                        {% if i.Muscle %}
+                        <label class="sidename">Muscles used :</label><label class="sidecont">{% for e in i.Muscle %} {{e}}, {% endfor %}</label>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+        <script>
+            var coll = document.getElementsByClassName("colla");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                console.log(content.style.maxHeight)
+                if (content.style.maxHeight){
+                content.style.maxHeight = null;
+                } else {
+                content.style.maxHeight = "500px";
+                } 
+            });
+            }
+        </script>
+    </div>
+{% endblock %}

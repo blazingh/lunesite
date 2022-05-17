@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'main/base.css' %}">
+        <script src="{% static 'main/base.js' %}" defer></script>
+        <title>wedb build 200</title>
+    </head>
+    <body>
+      <nav class="nav">
+        <a href="/">
+          <img src="{% static 'main/lune_black.png' %}" height="35" alt="Lune LOGO" id="logo">
+        </a>
+        <a href="#" class="burger" id="burger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+       </a>
+        <ul class="menus" id="menus"> 
+          <li><a href="/wods">OUR PROGRAMS</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">GET IN TOUCH</a></li>
+          <button class="user">SIGN IN</button>
+        </ul>
+      </nav>
+      <div class="content">
+
+        {% block content %}
+        {% endblock %}
+      
+      </div>
+      <script>
+        if ( window.history.replaceState ) {
+          window.history.replaceState( null, null, window.location.href );
+        }
+        </script>
+      </body>
+</html>

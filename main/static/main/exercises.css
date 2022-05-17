@@ -1,0 +1,74 @@
+.exlist{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.exsingle{
+    border-radius: 15px;
+    width: 90vw;
+    max-width: 810px;
+    margin: 5px 2px;
+    background-color: rgb(221, 221, 221)
+}
+
+.colla{
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    column-gap: 5vw;
+    background-color: rgb(178, 178, 178);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#exname{
+    width: 45%;
+    font-weight: 550;
+}
+
+.colla label{
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.cont {
+    padding: 0px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+
+.cont label{
+    color: rgb(0, 0, 0);
+    margin:5px;
+}
+
+.contblock{
+    display: flex;
+    width: min(100%, 400px);
+}
+
+.sidename{
+    white-space: nowrap;
+    width: fit-content;
+    width: 35%;
+}
+.sidecont{
+    display: block;
+    height: fit-content;
+    width: 65%;
+    font-weight: 500;
+}
