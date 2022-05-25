@@ -19,9 +19,9 @@
           <span class="bar"></span>
        </a>
         <ul class="menus" id="menus"> 
-          <li><a href="/wods">OUR PROGRAMS</a></li>
-          <li><a href="#">ABOUT US</a></li>
-          <li><a href="#">GET IN TOUCH</a></li>
+          <li><a href="{% url 'ex_list' %}">Exercises List</a></li>
+          <li><a href="{% url 'add_ex' %}">Add Exercises</a></li>
+          <li><a href="{% url 'gen_ex' %}">Generate Workout</a></li>
           <button class="user">SIGN IN</button>
         </ul>
       </nav>
@@ -31,10 +31,5 @@
         {% endblock %}
       
       </div>
-      <script>
-        if ( window.history.replaceState ) {
-          window.history.replaceState( null, null, window.location.href );
-        }
-        </script>
       </body>
 </html>

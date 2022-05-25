@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, request
-from django.template import Context, Template
 import json
-import main.exercise_fet as fet
-
+from main.ex_adder import add_exe
+from main.ex_generator import gen_wod
 
 
 def nothing(request):
@@ -13,7 +12,8 @@ def nothing(request):
 
     return render(request, "main/index.html", data)
 
-def home(request):
+
+def add_ex(request):
 
     if request.method == "POST":
 
@@ -27,15 +27,36 @@ def home(request):
         space = request.POST.get("space")
         motion = request.POST.get("motion")
 
-
         dict = {
-            "name": name
+            "name": add_exe(name, equip, muscle, level, risk, time, type, space, motion)
         }
-
-        fet.add_ex(name, equip, muscle, level, risk, time, type, space, motion)
-
-        name = request.POST.get("name")
 
         return render(request, "main/adder.html", dict)
 
     return render(request, "main/adder.html")
+
+
+def gen_ex(request):
+
+    if request.method == "GET":
+        return render(request, "main/generator.html")
+
+    equip = request.POST.getlist("equip")
+    muscle = request.POST.getlist("muscle")
+    level = request.POST.get("level")
+    risk = request.POST.getlist("risk")
+    time = request.POST.get("time")
+    space = request.POST.get("space")
+    goal = request.POST.get("goal")
+
+    dict = {
+        "wod": gen_wod(level, equip, risk, space, muscle, time, goal)
+    }
+        
+    if request.method == "POST":
+        return render(request, "main/workout.html", dict)
+
+
+def wod_page(request):
+
+    return

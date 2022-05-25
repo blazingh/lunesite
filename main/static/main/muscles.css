@@ -1,8 +1,7 @@
 svg{
     background-color: rgb(255, 255, 255);
-    width: 40vw;
-    min-width: 300px;
-    max-width: 400px;
+    width: 45vw;
+    max-width: 300px;
 }
 
 .picker{
@@ -11,6 +10,8 @@ svg{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 .widg label img{
     height: 90%;
@@ -26,7 +27,6 @@ path{
     fill: rgb(190, 190, 190);
 }
 
-@media (hover: hover) {g:hover path{fill: rgb(255, 77, 77) !important;}}
 
 form{
     display: flex;
@@ -44,6 +44,7 @@ form{
     align-items: center;
     row-gap: 1vw;
     max-width: 800px;
+    margin-bottom: 20px;
 }
 
 .widg p{
@@ -60,6 +61,7 @@ input[type=text]{
 ul{
     display: flex;
     column-gap: 1vw;
+    row-gap: 1vw;
     align-items: center;
     list-style: none;
     flex-wrap: wrap;
@@ -67,7 +69,7 @@ ul{
     align-items: center;
 }
 
-ul label{
+label{
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -81,33 +83,35 @@ input[type=checkbox], input[type=radio]{
 }
 
 
-input[type=checkbox] + label, input[type=radio] + label{
+.choices + label, .choices + label{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(193, 193, 193);
     margin: 5px 5px;
     text-align: center;
-    height: 75px;
-    width: 75px;;
+    height: 70px;
+    width: 100px;;
     border-radius: 10px;
     border: none;
     padding: 10px;
+    overflow: hidden;
 }
 
-input[type=checkbox]:checked + label, input[type=radio]:checked + label{
+.choices:checked + label, .choices:checked + label{
     background-color: rgb(255, 77, 77);
     color: rgb(0, 0, 0);
 }
 
 input[type=range]{
     width: 80vw;
-    height: 20px;
     max-width: 400px;
 }
 
 input[type=submit]{
-    width: 60px;
+    margin-top: 25px;
+    padding: 5px 15px;
+    width: fit-content;
     height: 35px;
     background-color: black;
     color: white;
@@ -117,4 +121,54 @@ input[type=submit]{
 
 #actmuscle ul{
     display: none;
+}
+
+.infoicon{
+    width: 24px;
+    background-color: white;
+    border-radius: 150px;
+}
+
+
+.hoverinfo{
+    background-color: rgb(211, 211, 211);
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    max-width: 500px;
+    width: 90vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.315);
+    padding: 15px;
+}
+
+.infocheck:checked + label .infoicon{
+    filter: invert();
+}
+
+.widgtitle{
+    display: flex;
+    column-gap: 7px;
+    justify-content: center;
+    align-items: center;
+}
+
+.infocheck:checked ~ .hoverinfo{
+    display: block;
+}
+
+#extype{
+    display:none;
+}
+
+.quickselect{
+    background-color: rgb(193, 193, 193);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 0px 7px;
+}
+
+.quickselect:active{
+    background-color: rgb(255, 77, 77);
 }
