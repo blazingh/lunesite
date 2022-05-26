@@ -1,0 +1,34 @@
+{% extends "main/base.html" %}
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/exercises.css' %}">
+
+<div class="exlist wodlist">
+    
+    {% for i in wod %}
+
+    <div class="exsingle">
+
+        <button class="colla">
+            <label id="exname" class="wodname">{{i.round}} rounds of : {{i.name}}</label>
+            <label>Work: {{i.work}} sec</label>
+            <label>Rest: {{i.rest}} sec</label>
+        </button>
+        
+        <div class="cont">
+            
+            <div class="contblock">
+                <label class="sidename">info :</label><label class="sidecont">this is how you do this move</label>
+            </div>
+
+        </div>
+    </div>
+
+    {%endfor%}
+    <script src="{% static 'main/list.js' %}"></script>
+
+</div>
+ 
+
+{% endblock %}

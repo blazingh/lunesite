@@ -1,0 +1,174 @@
+svg{
+    background-color: rgb(255, 255, 255);
+    width: 45vw;
+    max-width: 300px;
+}
+
+.picker{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.widg label img{
+    height: 90%;
+}
+
+path{
+    stroke: none;
+    fill: grey;
+}
+
+#outline{
+    stroke: none;
+    fill: rgb(190, 190, 190);
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 500px;
+}
+
+.widg{
+    margin: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1vw;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.widg p{
+    font-weight: 600;
+}
+
+input[type=text]{
+    text-align: center;
+    height: 35px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+ul{
+    display: flex;
+    column-gap: 1vw;
+    row-gap: 1vw;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+}
+
+input[type=checkbox], input[type=radio]{
+    display:none;
+}
+
+
+.choices + label, .choices + label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(193, 193, 193);
+    margin: 5px 5px;
+    text-align: center;
+    height: 70px;
+    width: 100px;;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.choices:checked + label, .choices:checked + label{
+    background-color: rgb(255, 77, 77);
+    color: rgb(0, 0, 0);
+}
+
+input[type=range]{
+    width: 80vw;
+    max-width: 400px;
+}
+
+input[type=submit]{
+    margin-top: 25px;
+    padding: 5px 15px;
+    width: fit-content;
+    height: 35px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    border: none;
+}
+
+#actmuscle ul{
+    display: none;
+}
+
+.infoicon{
+    width: 24px;
+    background-color: white;
+    border-radius: 150px;
+}
+
+
+.hoverinfo{
+    background-color: rgb(211, 211, 211);
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    max-width: 500px;
+    width: 90vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.315);
+    padding: 15px;
+}
+
+.infocheck:checked + label .infoicon{
+    filter: invert();
+}
+
+.widgtitle{
+    display: flex;
+    column-gap: 7px;
+    justify-content: center;
+    align-items: center;
+}
+
+.infocheck:checked ~ .hoverinfo{
+    display: block;
+}
+
+#extype{
+    display:none;
+}
+
+.quickselect{
+    background-color: rgb(193, 193, 193);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin: 0px 7px;
+}
+
+.quickselect:active{
+    background-color: rgb(255, 77, 77);
+}
