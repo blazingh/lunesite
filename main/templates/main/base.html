@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'main/base.css' %}">
+        <script src="{% static 'main/base.js' %}" defer></script>
+        <title>wedb build 200</title>
+    </head>
+    <body>
+      <nav class="nav">
+        <a href="/">
+          <img src="{% static 'main/lune_black.png' %}" height="35" alt="Lune LOGO" id="logo">
+        </a>
+        <a href="#" class="burger" id="burger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+       </a>
+        <ul class="menus" id="menus"> 
+          <li><a href="{% url 'ex_list' %}">Exercises List</a></li>
+          <li><a href="{% url 'add_ex' %}">Add Exercises</a></li>
+          <li><a href="{% url 'gen_ex' %}">Generate Workout</a></li>
+          <button class="user">SIGN IN</button>
+        </ul>
+      </nav>
+      <div class="content">
+
+        {% block content %}
+        {% endblock %}
+      
+      </div>
+      </body>
+</html>

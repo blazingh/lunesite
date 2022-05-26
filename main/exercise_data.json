@@ -1,0 +1,351 @@
+{
+   "ex_list": [
+      {
+         "Name": "Push Up",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "triceps",
+            "chest"
+         ],
+         "Level": "2",
+         "Risk": [
+            "wrist"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Pull Up",
+         "Equip": [
+            "bar"
+         ],
+         "Muscle": [
+            "traps",
+            "lats",
+            "biceps"
+         ],
+         "Level": "3",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "2",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Squat",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "quads"
+         ],
+         "Level": "1",
+         "Risk": [
+            "knee"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Sit Up",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "core"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Knee Push Up",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "triceps",
+            "chest"
+         ],
+         "Level": "1",
+         "Risk": [
+            "wrist"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Split Squat",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "hamstring",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "knee"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Plank",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "delts",
+            "core"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "static"
+      },
+      {
+         "Name": "Glute Bridges",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "hamstring"
+         ],
+         "Level": "1",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Pistol Squat",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "hamstring",
+            "quads"
+         ],
+         "Level": "4",
+         "Risk": [
+            "knee"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Box Step Up",
+         "Equip": [
+            "box"
+         ],
+         "Muscle": [
+            "glutes",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "2",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Flutter Kicks",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "core",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Lunge",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "hamstring",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "knee"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Burpee",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "triceps",
+            "glutes",
+            "chest",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "4",
+         "Type": "muscle",
+         "Space": "2",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Mountain Climber",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "delts",
+            "triceps",
+            "core"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "3",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Wall Sit",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "glutes",
+            "quads"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "static"
+      },
+      {
+         "Name": "Calf Raise",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "calves"
+         ],
+         "Level": "1",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Superman Hold",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "traps",
+            "lats",
+            "lowerback"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "static"
+      },
+      {
+         "Name": "Tricep Dips",
+         "Equip": [
+            "box"
+         ],
+         "Muscle": [
+            "triceps"
+         ],
+         "Level": "2",
+         "Risk": [
+            "shoulder"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      },
+      {
+         "Name": "Russian Twist",
+         "Equip": [
+            "none"
+         ],
+         "Muscle": [
+            "core",
+            "side"
+         ],
+         "Level": "2",
+         "Risk": [
+            "none"
+         ],
+         "Time": "2",
+         "Type": "muscle",
+         "Space": "1",
+         "Motion": "dynamic"
+      }
+   ]
+}

@@ -1,0 +1,82 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/exercises.css' %}">
+    <div class="exlist">
+        <div id="filter">
+
+            <button class="colla"><label id="exname">FILTER</label><label></label><label></label></button>
+                
+                <div class="cont">
+                    
+                    <input type="checkbox" name="boxm" class="check" value="traps" id="tra" checked><label class="checklabel" for="tra">Traps</label>    
+                    <input type="checkbox" name="boxm" class="check" value="delts" id="del" checked><label class="checklabel" for="del">Shoulder</label> 
+                    <input type="checkbox" name="boxm" class="check" value="triceps" id="tri" checked><label class="checklabel" for="tri">Triceps</label>  
+                    <input type="checkbox" name="boxm" class="check" value="forarm" id="for" checked><label class="checklabel" for="for">Forarms</label>  
+                    <input type="checkbox" name="boxm" class="check" value="lats" id="lat" checked><label class="checklabel" for="lat">Lats</label>     
+                    <input type="checkbox" name="boxm" class="check" value="lowerback" id="low" checked><label class="checklabel" for="low">Lower Back</label>
+                    <input type="checkbox" name="boxm" class="check" value="glutes" id="glu" checked><label class="checklabel" for="glu">Glutes</label>   
+                    <input type="checkbox" name="boxm" class="check" value="hamstring" id="ham" checked><label class="checklabel" for="ham">Hamstring</label>
+                    <input type="checkbox" name="boxm" class="check" value="calves" id="cal" checked><label class="checklabel" for="cal">Calves</label>   
+                    <input type="checkbox" name="boxm" class="check" value="neck" id="nec" checked><label class="checklabel" for="nec">Neck</label>     
+                    <input type="checkbox" name="boxm" class="check" value="chest" id="che" checked><label class="checklabel" for="che">Chest</label>    
+                    <input type="checkbox" name="boxm" class="check" value="biceps" id="bic" checked><label class="checklabel" for="bic">Biceps</label>   
+                    <input type="checkbox" name="boxm" class="check" value="core" id="cor" checked><label class="checklabel" for="cor">Core</label>     
+                    <input type="checkbox" name="boxm" class="check" value="side" id="sid" checked><label class="checklabel" for="sid">Side Core</label>
+                    <input type="checkbox" name="boxm" class="check" value="quads" id="qua" checked><label class="checklabel" for="qua">Quads</label>    
+                    <input type="checkbox" name="boxm" class="check" value="shins" id="shi" checked><label class="checklabel" for="shi">Shins</label>    
+                    
+                    <br><br>
+        
+                    <input type="checkbox" name="boxl" class="check" value="l1" id="el1" checked><label class="checklabel" for="el1">beginner</label>
+                    <input type="checkbox" name="boxl" class="check" value="l2" id="el2" checked><label class="checklabel" for="el2">average</label>
+                    <input type="checkbox" name="boxl" class="check" value="l3" id="el3" checked><label class="checklabel" for="el3">intermidiate</label>
+                    <input type="checkbox" name="boxl" class="check" value="l4" id="el4" checked><label class="checklabel" for="el4">athlete</label>
+
+                    <button id="filter">filter</button>
+
+                </div>
+            
+        </div>
+        {% for i in ex_list %}
+            <div class="exsingle l{{i.Level}}{% for m in i.Muscle %} {{m}}{% endfor %}">
+
+                <button class="colla"><label id="exname">{{i.Name}}</label><label>Level: {{i.Level}}</label><label>Space: {{i.Space}}</label></button>
+                
+                <div class="cont">
+                    
+                    <div class="contblock">
+                        <label class="sidename">Rep Time :</label><label class="sidecont">{{i.Time}} second</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        <label class="sidename">Movement Type :</label><label class="sidecont">{{i.Motion}}</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        <label class="sidename">Exercise Type :</label><label class="sidecont">{{i.Type}}</label>
+                    </div>
+
+                    <div class="contblock">
+                        <label class="sidename">space :</label><label class="sidecont">{{i.Space}}</label>
+                    </div>
+                    
+                    <div class="contblock">
+                        {% if i.Equipment %}
+                        <label class="sidename">Equipemnts :</label><label class="sidecont">{% for e in i.Equipment %} {{e}}, {% endfor %}</label>
+                        {% endif %}
+                    </div>
+
+                    <div class="contblock">
+                        {% if i.Muscle %}
+                        <label class="sidename">Muscles used :</label><label class="sidecont">{% for e in i.Muscle %} {{e}}, {% endfor %}</label>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+        <script src="{% static 'main/list.js' %}"></script>
+    </div>
+{% endblock %}
