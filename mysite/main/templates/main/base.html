@@ -5,31 +5,39 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'main/base.css' %}">
-        <script src="{% static 'main/base.js' %}" defer></script>
         <title>wedb build 200</title>
-    </head>
-    <body>
-      <nav class="nav">
-        <a href="/">
-          <img src="{% static 'main/lune_black.png' %}" height="35" alt="Lune LOGO" id="logo">
-        </a>
-        <a href="#" class="burger" id="burger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-       </a>
-        <ul class="menus" id="menus"> 
-          <li><a href="{% url 'ex_list' %}">Exercises List</a></li>
-          <li><a href="{% url 'add_ex' %}">Add Exercises</a></li>
-          <li><a href="{% url 'gen_ex' %}">Generate Workout</a></li>
-          <button class="user">SIGN IN</button>
-        </ul>
-      </nav>
+      </head>
+      <body>
+        <div class="fullnav">
+          <nav class="nav">
+            <a id="alogo" href="/">
+              <img src="{% static 'main/lune_white.png' %}" height="35" alt="Lune LOGO" id="logo">
+            </a>
+            <a href="#" class="burger" id="burger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </a>
+            <ul class="menus" id="menus"> 
+              <li><a href="{% url 'ex_list' %}">Exercises List</a></li>
+              <li><a href="{% url 'add_ex' %}">Add Exercises</a></li>
+              <li><a href="{% url 'gen_ex' %}">Generate Workout</a></li>
+              <button class="user">SIGN IN</button>
+            </ul>
+        </nav>
+      </div>
       <div class="content">
-
+        
         {% block content %}
         {% endblock %}
-      
+
+        <div id="alertback">
+          <div class="alertwind">
+            <label id="labelmessage">error message</label>
+            <button onclick="endAlert();">Got It</button>
+          </div>
+        </div>
       </div>
+      <script src="{% static 'main/base.js' %}" defer></script>
       </body>
 </html>

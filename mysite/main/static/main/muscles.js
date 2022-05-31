@@ -1,16 +1,23 @@
+window.addEventListener("load", (event) => {
+    document.querySelectorAll('.checks').forEach(item => {
+        if (item.checked){
+            pick2(item.getAttribute("value"), item.id)
+        }})
+    });
+
 function pick(svg, check) {
     const grp = document.getElementById(check)
     const id = "#" + svg + " path"
 
     if (grp.checked) {
         for (const e of document.querySelectorAll(id)) {
-            e.setAttribute("style", "fill: grey;");
+            e.setAttribute("style", "fill: var(--color5);");
         }
         grp.setAttribute("checked", "false")
         grp.checked = false;
     } else if (!grp.checked) {
         for (const e of document.querySelectorAll(id)) {
-            e.setAttribute("style", "fill: rgb(255, 77, 77) ;");
+            e.setAttribute("style", "fill: var(--color4);");
         }
         grp.setAttribute("checked", "true")
         grp.checked = true;
@@ -24,11 +31,11 @@ function pick2(svg, check) {
 
     if (!grp.checked) {
         for (const e of document.querySelectorAll(id)) {
-            e.setAttribute("style", "fill: grey;");
+            e.setAttribute("style", "fill: var(--color5);");
         }
     } else if (grp.checked) {
         for (const e of document.querySelectorAll(id)) {
-            e.setAttribute("style", "fill: rgb(255, 77, 77) ;");
+            e.setAttribute("style", "fill: var(--color4);");
         }
     }
 }
@@ -138,5 +145,13 @@ function quickselect(part){
             }
         }
         return
+    }
+    if (part=="clear"){
+        for (const m of document.querySelectorAll(".checks")){
+            m.checked = false
+            m.setAttribute("checked", "false")
+            pick2(m.getAttribute("value"), m.id)
+        }
+
     }
 }

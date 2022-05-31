@@ -1,16 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse, request
-import json
-from main.ex_adder import add_exe
-from main.ex_generator import gen_wod
-
+from main.exercise_handler import add_exe, fetch_exe, update_exe, generate_exe
 
 def nothing(request):
 
-    with open('main/exercise_data.json') as f:
-        data = json.load(f)
+    exercise_data = fetch_exe()
 
-    return render(request, "main/index.html", data)
+    context = {
+        "ex_list" : exercise_data["ex_list"],
+        "muscle_list" : exercise_data["muscle_list"],
+        "equip_list" : exercise_data["equip_list"],
+        "risk_list" : exercise_data["risk_list"]
+    }
+
+    return render(request, "main/index.html", context)
 
 
 def add_ex(request):
@@ -23,38 +26,38 @@ def add_ex(request):
         level = request.POST.get("level")
         risk = request.POST.getlist("risk")
         time = request.POST.get("time")
-        type = request.POST.get("type")
         space = request.POST.get("space")
         motion = request.POST.get("motion")
+        details = request.POST.get("details")
 
-        dict = {
-            "name": add_exe(name, equip, muscle, level, risk, time, type, space, motion)
+        context = {
+            "feedback" : add_exe(name, equip, muscle, level, risk, time, space, motion, details)
         }
 
-        return render(request, "main/adder.html", dict)
+        return render(request, "main/adder.html", context)
 
     return render(request, "main/adder.html")
 
 
 def gen_ex(request):
 
-    if request.method == "GET":
-        return render(request, "main/generator.html")
-
-    equip = request.POST.getlist("equip")
-    muscle = request.POST.getlist("muscle")
-    level = request.POST.get("level")
-    risk = request.POST.getlist("risk")
-    time = request.POST.get("time")
-    space = request.POST.get("space")
-    goal = request.POST.get("goal")
-
-    dict = {
-        "wod": gen_wod(level, equip, risk, space, muscle, time, goal)
-    }
-        
     if request.method == "POST":
-        return render(request, "main/workout.html", dict)
+
+        equip = request.POST.getlist("equip")
+        muscle = request.POST.getlist("muscle")
+        level = request.POST.get("level")
+        risk = request.POST.getlist("risk")
+        time = request.POST.get("time")
+        space = request.POST.get("space")
+        goal = request.POST.get("goal")
+
+        context = {
+            "wod": generate_exe(level, equip, risk, space, muscle, time, goal)
+        }
+        
+        return render(request, "main/workout.html", context)
+
+    return render(request, "main/generator.html")
 
 
 def wod_page(request):
