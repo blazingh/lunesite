@@ -5,9 +5,8 @@ var coll = document.getElementsByClassName("colla");
             coll[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var content = this.nextElementSibling;
-                console.log(content.style.maxHeight)
-                if (content.style.maxHeight){
-                content.style.maxHeight = null;
+                if (content.style.maxHeight == "500px"){
+                content.style.maxHeight = "0px";
                 } else {
                 content.style.maxHeight = "500px";
                 } 
